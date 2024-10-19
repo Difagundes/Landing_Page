@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandingPage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        background-color: #f0f0f0;
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: 300;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav ul li a {
+        color: #f0f0f0;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #f0f0f0;
+        color: #222;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    #home {
+        background-color: #fff;
+        padding: 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+
+    #home img {
+        display: block;
+        margin: 0 auto 20px;
+        max-width: 150px;
+        border-radius: 10%;
+        border: 4px solid #333;
+    }
+
+    #home h2 {
+        text-align: left;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    #home p {
+        text-align: justify;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+    #curriculo {
+        background-color: #fff;
+        padding: 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+    #curriculo h2 {
+        text-align: left;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    #curriculo p {
+        text-align: justify;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+    #github {
+        background-color: #fff;
+        padding: 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+    #github p {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+    #github img {
+        display: block;
+        margin: 0 auto 20px;
+        max-width: 150px;
+        border-radius: 50%;
+        border: 4px solid #333;
+    }
+    #servicos {
+        background-color: #fff;
+        padding: 60px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+    h3 {
+        margin-top: 30px;
+        font-size: 1.8rem;
+        color: #444;
+    }
+
+    ul, dd {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 1.1rem;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #444;
+        color: white;
+    }
+
+    td {
+        background-color: #f9f9f9;
+    }
+
+    button {
+        background-color: #222;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea, select {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: #444;
+        outline: none;
+    }
+
+    a {
+        color: #444;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #222;
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        #home {
+            padding: 30px;
+        }
+
+        button {
+            padding: 8px 16px;
+        }
+    }
+</style>
+<body>
+    <header>
+    <h1>Bem-vindo à Landing Page do Diego!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" target="_self">Home</a></li>
+                <li><a href="curriculo.html" target="_self">Currículo</a></li>
+                <li><a href="github.html" target="_self">GitHub</a></li>
+                <li><a href="servicos.html" target="_self">Serviços</a></li>
+                <li><a href="contato.html" target="_self">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Sobre Mim:</h2>
+        <img src="minha_foto.jpg" alt="Foto de Diego Fagundes">
+        <p>Sou Diego Miranda Fagundes, um entusiasta de tecnologia e focado totalmente em maximizar minhas habilidades, busquei aprimorar meus conhecimentos que contribuíram para o
+             desenvolvimento de disciplina, comprometimento, capacidade de adaptação a mudanças, excelência na entrega de resultados e trabalho em equipe.</p>
+        <p>Nasci em São Paulo e desde de muito cedo sabia que gostari de trabalhar com tecnologia, afinal qual criança da quita série fala para os amiguinhos que quer passar  e estudar no ITA? 
+            Bom, os anos foram se passando e mudei-me para o Espírito Santo aos 16 anos e segui um caminho focado em Engenharia Elétrica. Em 2014 passei na UFES e durante minha graduação, 
+            me aprofundei em redes de computadores, contribuindo com artigos científicos e sendo responsável por projetos no datacenter da universidade. No entanto, após abrir e fechar uma 
+            empresa de engenharia focada em instalação e manutenção eletrica, percebi que minha verdadeira paixão era o desenvolvimento. Passei por diferentes empregos nos últimos anos, 
+            mas em 2024, decidi me dedicar completamente ao meu sonho de ser desenvolvedor de software e voltei a estudar, cursando Sistemas de Informação.</p>
+        
+        <h3>Objetivos Profissionais</h3>
+        <p>Meu objetivo agora é construir uma carreira sólida como desenvolvedor de software, aplicando as habilidades que já desenvolvi e aprendendo novas tecnologias para me tornar um profissional de 
+            destaque na área. </p>
+        <h3>Habilidades</h3>
+        <p>Tenho um conjunto diversificado de habilidades que me permitem atuar em diferentes áreas de forma eficiente. Em termos de soft skills, sou pró-ativo, resiliente e comunicativo, 
+            o que me ajuda a lidar com desafios e colaborar em equipe. Além disso, minha capacidade de liderança e organização me permite coordenar projetos com eficiência. Sou criativo, 
+            sempre buscando novas soluções para problemas complexos.</p>
+        <p>Em relação às hard skills, domino ferramentas como Autocad e o Pacote Office, além de ter experiência com CRM. Tenho um forte conhecimento em programação, especialmente em 
+            Python, C, C++ e Shell Script. Também possuo habilidades intermediárias em MATLAB, Verilog, JavaScript, HTML e Kotlin, o que me permite trabalhar em projetos variados, 
+            desde desenvolvimento web até scripts mais complexos em automação e engenharia.</p>
+        
+        <h3>Hobbies</h3>
+        <ul>
+            <li>JOGADOR DE RUGBY</li>
+                <dd> Uma das maiores paixões da minha vida é o rugby e o Vitória Rugby Club(time que me ensinou e me fez ser a pessoa que sou hoje), jogo à cerca de 11 anos e 
+                ja conquistei muita coisa graças a esse esporte. Fui capitão do time juvenil conquistando diversos titulos estaduais, no ano que fui promovido para o time principal ganhei o titulo
+                de melhor atleta do ano na minha equipe, o que despertou a atenção de outros times pelo brasil, fui chamado pelo Porto Seguro Rugby para jogar por eles sendo vice campeão baiano e 
+                sendo considerado o melhor half-scrum do campeonato. Infelizmente no final de 2017 sofri uma grave lesão no joelho que me fez abandonar o jogo profissional e tornando apenas um 
+                hobby até hoje.
+            </dd>
+            <li>JOGADOR DE BOARD E CARD GAMES</li>
+                <dd> Outra paixão são os jogos, não os eletronicos como todo mundo, mas os jogos de tabuleiros e jogos de cartas como Magic, Pokemon e One Piece, que me 
+                fazem gastar boa parte do meu tempo livre.
+            </dd>
+        </ul>
+        <h3>Vida Acadêmica</h3>
+        <ul>
+            <li>Fundamental</li>
+            <ul>
+                <li>Colégio São Domingo Savio</li>
+                <li>Colégio Adventista</li>
+                <li>Colégio Universitário</li>
+            </ul>
+            <li>Ensino Médio</li>
+            <ul>
+                <li>Colégio Gibran</li>
+                <li>Centro Educacional Charles Darwin</li>
+            </ul>
+            <li>Pré-vestibular</li>
+            <ul>
+                <li>Colégio UP</li>
+            </ul>
+            <li>Graduação</li>
+            <ul>
+                <li>UFES</li>
+                <ul>
+                    <li>Engenharia Elétrica(Incompleto)</li>
+                </ul>
+                <li>UVV</li>
+                <ul>
+                    <li>Sistemas de Informação(Cursando)</li>
+                </ul>
+            </ul>
+        </ul>
+        <h3>Cursos</h3>
+        <ul>
+            <li>SEBRAE</li>
+            <ul>
+                <li>Gestão Financeira</li>
+                <li>Gestão de Pessoas</li>
+                <li>Marketing Empresarial</li>
+                <li>Gestão de Empresas(Básico)</li>
+            </ul>
+            <li>OutBound Sales</li>
+            <ul>
+                <li>SDR e CRM</li>
+            </ul>
+            <li>Udemy</li>
+            <ul>
+                <li>Desenvolvimento Android Completo 2021</li>
+                <li>Desenvolvimento de Aplicativo Android usando Kotlin</li>
+            </ul>
+        </ul>
+        <h3>Disciplinas da Faculdade</h3>
+        <p>Atualmente cursando: Sistemas de Informação na UVV.</p>
+        <p>Matérias</p>
+        <ul>
+            <li>Cosntrução de Software para Web</li>
+                <dd>Matéria focada em desenvolvimento Web, ensinando HTML, CSS e JavaScript.</dd>
+            <li>Design e Desenvolvimento de Banco de Dados I</li>
+                <dd>Matéria focada no estudo e desenvolvimento de banco de dados utilizando plataformas como MySQL, Oracle, entre outras.</dd>
+            <li>Experiência e Interface com o Usuário</li>
+                <dd>Matéria focada no estudo de performace da Experiêmcia do Usuário (UX design).</dd>
+            <li>Fundamentos de Tecnologia da Computação</li>
+                <dd>Matéria com escopo baseado na matéria CS50 de Harvard, focada no estudo do que é computação, o que é programação e como desenvolve-las.</dd>
+            <li>Lógica para Computadores</li>
+                <dd>Matéria focada no desenvolvimento de raciocínio lógico e lógica computacional.</dd>
+            <li>Textos Científicos: Aspectos Metodológicos e Linguísticos</li>
+                <dd>Matéria focada no ensino de padrões de textos científicos e padrao abnt.</dd>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>© 2024 Diego Miranda Fagundes. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
